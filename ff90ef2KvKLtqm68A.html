@@ -1,0 +1,168 @@
+<html><head><base href="https://musicinfluence.example.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Música no Dia a Dia</title>
+<style>
+body {
+    color: white;
+    background: black;
+    margin: 0px;
+    font-family: "Chakra Petch", sans-serif;
+    margin-bottom: 100px;
+}
+
+header {
+    border-bottom: solid 2px rgb(42, 122, 228);
+    padding: 20px;
+    font-size: 32px;
+    color: rgb(42, 122, 228);
+}
+
+.chamada {
+    background: rgb(184, 156, 213);
+    padding-bottom: 80px;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.chamada-texto {
+    margin-right: 5%;
+    max-width: 50%;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.categoria-videos {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.categoria {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 50px;
+}
+
+.categoria-videos img {
+    opacity: 0.5;
+    height: 200px;
+    transition: opacity 0.3s, border 0.3s;
+}
+
+.categoria-videos img:hover {
+    opacity: 1.0;
+    border: 3px solid rgb(42, 122, 228);
+}
+
+.categoria h2 {
+    color: rgb(42, 122, 228);
+}
+
+.influencia-section {
+    padding: 40px 20px;
+}
+
+.influencia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.influencia-item {
+    background: rgb(42, 42, 42);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.influencia-item:hover {
+    transform: translateY(-5px);
+}
+
+.influencia-item h3 {
+    color: rgb(42, 122, 228);
+    margin-top: 0;
+}
+</style>
+</head>
+<body>
+    <header>MÚSICA NO DIA A DIA</header>
+
+    <section class="chamada">
+        <div class="chamada-texto">
+            <h1>O PODER DA MÚSICA</h1>
+            <p>Descubra como as melodias moldam nossas vidas</p>
+        </div>
+
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/NKDXuCE7LeQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="influencia-section">
+        <h2>Como a Música Influencia Nosso Dia a Dia</h2>
+        <div class="influencia-grid">
+            <div class="influencia-item">
+                <h3>Humor</h3>
+                <p>A música tem o poder de alterar nosso estado emocional, elevando o humor ou nos ajudando a processar sentimentos complexos.</p>
+            </div>
+            <div class="influencia-item">
+                <h3>Produtividade</h3>
+                <p>Certos tipos de música podem aumentar nosso foco e produtividade, especialmente em tarefas repetitivas ou criativas.</p>
+            </div>
+            <div class="influencia-item">
+                <h3>Exercícios</h3>
+                <p>Músicas com ritmos energéticos podem melhorar o desempenho físico e a motivação durante os exercícios.</p>
+            </div>
+            <div class="influencia-item">
+                <h3>Memória</h3>
+                <p>A música está intimamente ligada à memória, podendo evocar lembranças vívidas e emoções associadas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="categoria">
+        <h2>Vídeos Relacionados</h2>
+        <div class="categoria-videos">
+            <a href="https://www.youtube.com/watch?v=NKDXuCE7LeQ">
+                <img alt="Vídeo sobre os benefícios da música para o cérebro" src="https://img.youtube.com/vi/NKDXuCE7LeQ/maxresdefault.jpg" width="320" height="180">
+            </a>
+            <a href="https://www.youtube.com/watch?v=WPni755-Krg">
+                <img alt="Vídeo sobre como a música afeta as emoções" src="https://img.youtube.com/vi/WPni755-Krg/maxresdefault.jpg" width="320" height="180">
+            </a>
+            <a href="https://www.youtube.com/watch?v=9Kq3rwjMxTE">
+                <img alt="Vídeo sobre música e produtividade" src="https://img.youtube.com/vi/9Kq3rwjMxTE/maxresdefault.jpg" width="320" height="180">
+            </a>
+            <a href="https://www.youtube.com/watch?v=ktvTqknDobU">
+                <img alt="Vídeo sobre a ciência por trás da música que arrepia" src="https://img.youtube.com/vi/ktvTqknDobU/maxresdefault.jpg" width="320" height="180">
+            </a>
+        </div>
+    </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const videoLinks = document.querySelectorAll('.categoria-videos a');
+    videoLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const videoId = this.href.split('v=')[1];
+            const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+            const iframe = document.querySelector('.chamada iframe');
+            iframe.src = embedUrl;
+        });
+    });
+});
+</script>
+
+</body></html>
